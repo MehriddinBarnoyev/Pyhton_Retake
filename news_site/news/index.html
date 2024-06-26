@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>News Site</title>
+</head>
+<body>
+    <h1>News Articles</h1>
+    <div>
+        <h2>Categories</h2>
+        <ul>
+            {% for category in categories %}
+            <li><a href="{% url 'category_filter' category.id %}">{{ category.name }}</a></li>
+            {% endfor %}
+        </ul>
+    </div>
+    <div>
+        <h2>Articles</h2>
+        <ul>
+            {% for article in articles %}
+            <li>{{ article.title }} - {{ article.created_at }}</li>
+            {% endfor %}
+        </ul>
+    </div>
+</body>
+</html>
